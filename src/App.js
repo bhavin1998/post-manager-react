@@ -2,15 +2,36 @@ import logo from './logo.svg';
 import './App.css';
 import Navbar from './components/Navbar';
 import Login from './components/Login';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+import Createaccount from './components/Createaccount';
+import Dashboard from './components/Dashboard';
 
 function App() {
   return (
     <>
-    <Navbar/>
-    <div className="container">
-      <Login/>
-    </div>
     
+    <Navbar/>
+    <Router>
+    <div className="container">
+      <Switch>
+          <Route exact path="/">
+              <Dashboard pagetitle="Dashboard"/>
+          </Route>
+          <Route exact path="/login">
+            <Login pagetitle="Login Page"/>
+          </Route>
+          <Route exact path="/createaccount">
+            <Createaccount pagetitle="Registration Page"/>
+          </Route>
+      </Switch>
+    </div>
+    </Router>
+
     </>
   );
 }
