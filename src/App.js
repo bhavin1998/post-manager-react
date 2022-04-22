@@ -10,8 +10,13 @@ import {
 } from "react-router-dom";
 import Createaccount from './components/Createaccount';
 import Dashboard from './components/Dashboard';
+import React,{useState} from 'react'
 
 function App() {
+
+  const [mode,sitemode] = useState('sitename');
+  
+
   return (
     <>
     
