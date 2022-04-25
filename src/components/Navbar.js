@@ -1,6 +1,7 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
-export default function Navbar() {
+export default function Navbar(props) {
   return (
       <>
         <div>
@@ -22,10 +23,11 @@ export default function Navbar() {
                     <a className="nav-link" href="/createaccount">Create Account</a>
                     </li>
                 </ul>
-                <form className="d-flex">
-                    <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-                    <button className="btn btn-outline-success" type="submit">Search</button>
-                </form>
+                <div className="d-flex">
+                    <div className="btn-primary mx-2 rounded" style={{height:'30px',width:'30px'}} onClick = {()=>{props.togglemode('primary')}}></div>
+                    <div className="btn-danger mx-2 rounded" style={{height:'30px',width:'30px'}} onClick = {()=>{props.togglemode('danger')}}></div>
+                    <div className="btn-success mx-2 rounded" style={{height:'30px',width:'30px'}} onClick = {()=>{props.togglemode('success')}}></div>
+                </div>
                 </div>
             </div>
             </nav>

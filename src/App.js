@@ -15,12 +15,24 @@ import React,{useState} from 'react'
 function App() {
 
   const [mode,sitemode] = useState('sitename');
+
+  const removebodyclass = () => {
+    document.body.classList.remove('bg-primary');
+    document.body.classList.remove('bg-danger');
+    document.body.classList.remove('bg-success');
+  }
+
+  const togglemode = (cls) => {
+    removebodyclass()
+    console.log("togglemode "+cls);
+    document.body.classList.add('bg-'+cls);
+  }
   
 
   return (
     <>
     
-    <Navbar/>
+    <Navbar togglemode={togglemode}/>
     <Router>
     <div className="container">
       <Switch>
